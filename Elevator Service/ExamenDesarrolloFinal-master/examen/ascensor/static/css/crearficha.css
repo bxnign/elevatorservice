@@ -1,0 +1,23 @@
+
+.elemento {
+    padding: 10px;
+    margin: auto;
+    font-family: sans-serif;
+    text-align: center;
+    top: 100px;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background: rgb(231, 231, 231);
+    border: 5px solid #D13438;
+
+}
+ 
+.elemento p{
+    font-size: 13px;
+    padding: 0%;
+}
+
+footer {
+    padding-top: 120px;
+}

@@ -1,0 +1,77 @@
+{% extends 'ascensor/base.html' %}
+{% block content %} 
+{% load staticfiles %}
+
+<main>
+<section id="banner"> 
+<img src="{% static 'img/banner.jpg' %}" alt="bannner">
+<div class="contenedor">
+    <h2>Servicio Personalizado</h2>
+    <p>Adquiera nuestros servicios, no se arrepentira!</p>
+    <a href="#"> Leer mas </a>
+</div>
+</section>
+
+<section id="bienvenidos">
+    <div class="contenedor">
+
+    
+<h2>¿Quienes Somos?</h2>
+<br>
+<p>Somos una pequeña pyme de chile la cual esta enfocada en el servicio de reparacion y 
+        mantencion de ascensores en chile, nos encuentras en toda la Quinta region, con Trabajadores
+        expertos y profesionales siendo habitualmente capacitados en el rubro, empresa que creece con
+        los avances tecnologicos que implica este tipo de objetos.</p>
+    </div>
+</section>
+
+<section id=blog> 
+<div class="contenedor">
+
+    <article>
+        <img src="{% static 'img/trabajadores.jpg' %}" alt="tra">
+        <h3>Trabajadores 100% profesionales, comprometidos con su trabajo</h3>
+    </article>
+
+    <article>
+            <img src="{% static 'img/tecnologia.jpg' %}" alt="tec">
+            <h3>Trabajamos con las mejores tecnologias, siempre actualizandonos</h3>
+        </article>
+
+        <article>
+                <img src="{% static 'img/capacitaciones.jpg' %}" alt="cap">
+                <h3> capacitaciones todos los años a nuestros trabajadores</h3>
+        </article>
+</div>
+
+</section>
+
+
+<section id="info">
+
+    <h3> Por nuestro destacado servicio a lo largo del tiempo
+        nuestra pyme ah sido reconocida por distintas empresas
+        a lo largo de la region
+    </h3>
+    <div class="contenedor">
+        <div class="info-pet">
+            <img src="{% static 'img/marca1.png' %}" alt="">
+        </div>
+   
+            <div class="info-pet">
+                <img src="{% static 'img/marca2.jpg' %}" alt="">
+            </div>
+        
+                <div class="info-pet">
+                    <img src="{% static 'img/marca3.png' %}" alt="">
+                </div>
+           
+                    <div class="info-pet">
+                        <img src="{% static 'img/marca4.jpg' %}" alt="">
+                    </div>
+                </div>
+</section>
+</main>
+
+
+{% endblock %}

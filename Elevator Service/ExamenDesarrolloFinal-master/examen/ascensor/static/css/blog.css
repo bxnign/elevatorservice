@@ -1,0 +1,33 @@
+#blog h3{
+    
+    text-align: center;
+    font-size: 15px;
+    width: 290px;
+}
+
+
+#blog .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+#blog article {
+    
+    margin: 15px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+
+#blog img{
+    
+    width: 95%;
+    max-width: 290px;
+}

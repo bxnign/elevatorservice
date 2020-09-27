@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+ <!--  RECICLAJE DE ESTILO -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
+<!--CSS STATICO-->
+
+<!--Fonts ESTÁTICO-->
+<link rel="stylesheet" type="text/css" href="{% static 'fonts/style.css' %}">
+<!--Google Font-->
+<link href="https://fonts.googleapis.com/css?family=Basic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+<!--Bootsrap DateTimePícker-->
+<link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/moment.js/2.17.1/moment.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/js/bootstrap-datetimepicker.min.js"></script>
+<!--Iconos -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"></head>
+<!--Boostrap Validator-->
+<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.1.3/dist/bootstrap-validate.js" ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+ 
+
+  <!--  RECICLAJE DE ESTILO -->
+   
+    <meta name="theme-color" content="#85d4b7">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elevator service</title>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+                <p> <h1> Elevator Service  </h1> </p>
+                 <input type="checkbox" id="menu-bar">
+                 <label class="icon-menu" for="menu-bar"></label>
+                 <nav class="menu">
+                        {% if user.is_authenticated %}
+                         {% if user.username == "admin" %}
+                         <a href="{% url 'adm.inicio' %}"> Agregar Clientes </a>
+                        <!---   <a href="{% url 'clientes.adm' %}">Clientes</a>  --> 
+                         <!--  <a href="{% url 'fichas.adm' %}">Fichas</a> -->
+                         {% else  %} 
+                        <a href="{% url 'clientes' %}">Ver Clientes</a>
+                        <a href="{% url 'fichas' %}">Ver Fichas</a>
+                         {% endif %}
+                    
+                          {% endif %}
+                          {% if user.is_authenticated %}
+                          <a href="{% url 'logout' %}">Cerrar Sesion ({{user.username}}) </a>
+                          <a href="http://localhost:8000/">Ir a Inicio</a>
+                          {% else %}
+                     <a href="{% url 'login' %}"> Trabajadores </a>
+                     <a href="#"> Quienes Somos </a>
+                     <a href="#"> Contactenos </a>
+                     <a href="http://localhost:8000/">Ir a Inicio</a>
+                     {% endif %}
+                     
+                </nav>
+    </div>
+</header>
+
+
+
+
+
+            {% block content %}
+            {% endblock %}
+<footer>
+
+                    <div class="contenedor">
+                        <p class="copy">Elevator Service &copy; 2018 </p>
+                        <div class="sociales">
+                            <a class="icon-facebook-squared" href="#"></a>
+                            <a class="icon-instagram" href="#"></a>
+                            <a class="icon-twitter" href="#"></a>
+                            <a class="icon-gplus" href="#"></a>
+                        </div>
+                    </div>
+                </footer>
+            
+</body>
+</html>

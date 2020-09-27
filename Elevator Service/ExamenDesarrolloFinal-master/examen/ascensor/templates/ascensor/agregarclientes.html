@@ -1,0 +1,76 @@
+{% extends 'ascensor/base.html' %}
+{% block content %} 
+{% load staticfiles %}
+
+<main>
+<section id="blog">
+        <div class="card formulario-perro">
+
+                <h1 class="titulo-agregar-perro ">Agregar Cliente </h1>
+            <div class="row ">
+        
+            <div class="col-lg-6 ">
+                <form method="POST" class="form-add" enctype="multipart/form-data">
+                {% csrf_token %}
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="material-icons">add</i></div>
+                        </div>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre Completo"  name="Nombre_Completo"  required>
+                              <div class="valid-feedback" >
+                                Completado
+                              </div>
+                      </div>
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="material-icons">add</i></div>
+                        </div>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Direccion"  name="Direccion"  required>
+                              <div class="valid-feedback" >
+                                Completado
+                              </div>
+                      </div>
+                       <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="material-icons">add</i></div>
+                        </div>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Ciudad"  name="Ciudad"  required>
+                              <div class="valid-feedback" >
+                                Completado
+                              </div>
+                      </div>
+                      <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="material-icons">add</i></div>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Comuna"  name="Comuna"  required>
+                                  <div class="valid-feedback" >
+                                    Completado
+                                  </div>
+                          </div>
+                          <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text"><i class="material-icons">email</i></div>
+                                </div>
+                                <input type="email" class="form-control" id="validationCustom03" placeholder="Ingrese Email"  name="Correo"  required>
+                                <div class="valid-feedback" >
+                                        Completado
+                                      </div>
+                              </div>
+                              Tecnico Asociado: {{form.Tecnico_Asociado}}                              
+               <a href="localhost:8000" class="btn btn-info btn-cancelar" >Cancelar</a>
+               <button type='submit' class="save btn btn-info btn-cancelar">Guardar</button>
+            </form> 
+            
+        
+            </div>
+        </div>
+        </div>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+
+
+</section>
+
+</main>
+{% endblock %}
