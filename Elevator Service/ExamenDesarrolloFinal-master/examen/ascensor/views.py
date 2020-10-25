@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 # MENSAJES
 from django.contrib import messages
-# Importamos los modelos de los perros
+
 from .models import OrdenTrabajo, RegistroCliente
 # Importamos el Formulario
 from .forms import RegistroCliente_form, OrdenTrabajo_form
